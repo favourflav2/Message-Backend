@@ -40,7 +40,7 @@ const server = app.listen(port, () => {
 const io = new Server(server,{
   pingTimeout:60000,
   cors: {
-    origin: ['https://message-frontend.onrender.com','http://localhost:5001','https://message-frontend.onrender.com/login','https://message-frontend.onrender.com/','https://message-frontend.onrender.com/signup']
+    origin: ['https://message-frontend.onrender.com','http://localhost:3000','https://message-frontend.onrender.com/login','https://message-frontend.onrender.com/','https://message-frontend.onrender.com/signup']
   }
 });
 
