@@ -39,7 +39,7 @@ const server = app.listen(port, () => {
 const io = new Server(server,{
   pingTimeout:60000,
   cors: {
-    origin: localDevEnv !== "production" ? process.env.LOCAL_URL : process.env.PROD_URL
+    origin: process.env.PROD_URL
   }
 });
 
