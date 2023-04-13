@@ -21,6 +21,7 @@ dotenv.config();
 const port = process.env.PORT || 5001;
 
 const localDevEnv = process.env.NODE_ENV
+console.log(localDevEnv)
 
 // MongoDB
 mongoose.set("strictQuery", true);
@@ -39,7 +40,7 @@ const server = app.listen(port, () => {
 const io = new Server(server,{
   pingTimeout:60000,
   cors: {
-    origin: `${localDevEnv !== "production" ? process.env.LOCAL_URL : process.env.PROD_URL}`
+    origin: `${localDevEnv !== "production"? process.env.LOCAL_URL : process.env.PROD_URL}`
   }
 });
 
