@@ -37,7 +37,7 @@ export async function access_Chat(req, res) {
   //! if theres no chat with the two users we craete a chat
   isChat = await User.populate(isChat, {
     path: "latestMessage.sender",
-    select: "name pic email",
+    select: "userName pic email",
   });
 
   if (isChat.length > 0) {
