@@ -56,8 +56,8 @@ export async function log_In(req, res) {
           .status(404)
           .json({ msg: "Sorry the password you entered does not match" });
       } else {
-        user = await User.findOne({email}).select("-password")
-        return res.status(200).json({ user, token });
+        const {password,...otherData} = user._doc
+        return res.status(200).json({ user:otherData, token });
       }
     }
   } catch (e) {
